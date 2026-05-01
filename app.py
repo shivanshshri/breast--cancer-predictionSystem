@@ -2,10 +2,11 @@ from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 import pickle
+import os
 
 # loading model
 model = pickle.load(open('models/model.pkl', 'rb'))
-scaler = pickle.load(open('notebook and dataset/scaler.pkl','rb'))
+scaler = pickle.load(open('notebook_and_dataset/scaler.pkl','rb'))
 
 # flask app
 app = Flask(__name__)
@@ -38,5 +39,3 @@ def predict():
 
     return render_template('index.html', message=message)
 
-if __name__ == '__main__':
-    app.run(debug=True)
