@@ -37,6 +37,3 @@ def predict():
     message = ['Cancrouse' if pred[0] == 1 else 'Not Cancrouse']
 
     return render_template('index.html', message=message)
-
-if __name__ == '__main__':
-    app.run(host = '0.0.0.0', debug=True)
