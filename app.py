@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 import pickle
-import os
 
 # loading model
 model = pickle.load(open('models/model.pkl', 'rb'))
@@ -39,3 +38,5 @@ def predict():
 
     return render_template('index.html', message=message)
 
+if __name__ == '__main__':
+    app.run(host = '0.0.0.0', debug=True)
